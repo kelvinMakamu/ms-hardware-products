@@ -5,36 +5,33 @@
  */
 package com.kamilifu.ms_hardware_products.dblayer.entities;
 
-import com.kamilifu.ms_hardware_products.dblayer.entities.enums.Units;
 import java.util.Date;
 import javax.persistence.*;
 import lombok.*;
+
 /**
  *
  * @author kmakamu
  */
 @Entity
-@Table(name="products")
+@Table(name="productPrices")
 @Getter
 @Setter
 @ToString
-public class Products {
+public class ProductPrices {
   @Id
   @Setter(AccessLevel.PROTECTED)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
-  @Column(length=75,nullable=false,unique=true)
-  private String name;
   
   @Column(nullable=false)
-  private int restockLevel;
+  private Long productId;
   
-  @Column(nullable=false)
-  private int inStock;
+  @Column(precision=15,scale=4,nullable=false)
+  private float buyingPrice;
   
-  @Enumerated(EnumType.STRING)
-  private Units units;
+  @Column(precision=15,scale=4,nullable=false)
+  private float sellingPrice;
   
   @Column(nullable=false)
   private boolean isActive;
