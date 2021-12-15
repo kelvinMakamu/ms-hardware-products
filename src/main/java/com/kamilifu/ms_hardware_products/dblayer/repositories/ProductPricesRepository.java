@@ -5,10 +5,15 @@
  */
 package com.kamilifu.ms_hardware_products.dblayer.repositories;
 
+import com.kamilifu.ms_hardware_products.dblayer.entities.ProductPrices;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author kmakamu
  */
-public interface ProductPricesRepository {
+@Repository
+public interface ProductPricesRepository extends CrudRepository<ProductPrices, Long>{
   
 }
