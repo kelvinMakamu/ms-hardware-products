@@ -5,7 +5,6 @@
  */
 package com.kamilifu.ms_hardware_products.dblayer.entities;
 
-import com.kamilifu.ms_hardware_products.dblayer.entities.enums.Units;
 import java.util.Date;
 import javax.persistence.*;
 import lombok.*;
@@ -32,7 +31,7 @@ public class Products {
   private int inStock;
   
   @Enumerated(EnumType.STRING)
-  private Units units;
+  private EUnits units;
   
   @Column(nullable=false)
   private boolean isActive;

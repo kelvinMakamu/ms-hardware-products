@@ -5,20 +5,31 @@
  */
 package com.kamilifu.ms_hardware_products.models.payloads;
 
-import com.kamilifu.ms_hardware_products.dblayer.entities.enums.Units;
+import com.kamilifu.ms_hardware_products.dblayer.entities.EUnits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 /**
  *
  * @author kmakamu
  */
 public class ProductRequest {
-  
+  @NotNull
+  @NotBlank
   private String name;
-  private Units unit;
+  @NotNull
+  @NotBlank
+  private EUnits unit;
+  @NotNull
+  @NotBlank
   private int restockLevel;
+  @NotNull
+  @NotBlank
   private float buyingPrice;
+  @NotNull
+  @NotBlank
   private float sellingPrice;
 
-  public ProductRequest(String name, Units unit, int restockLevel, float buyingPrice, float sellingPrice) {
+  public ProductRequest(String name, EUnits unit, int restockLevel, float buyingPrice, float sellingPrice) {
     this.name = name;
     this.unit = unit;
     this.restockLevel = restockLevel;
@@ -34,11 +45,11 @@ public class ProductRequest {
     this.name = name;
   }
 
-  public Units getUnit() {
+  public EUnits getUnit() {
     return unit;
   }
 
-  public void setUnit(Units unit) {
+  public void setUnit(EUnits unit) {
     this.unit = unit;
   }
 

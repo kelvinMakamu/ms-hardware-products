@@ -5,7 +5,7 @@
  */
 package com.kamilifu.ms_hardware_products.models.payloads;
 
-import com.kamilifu.ms_hardware_products.dblayer.entities.enums.Units;
+import com.kamilifu.ms_hardware_products.dblayer.entities.EUnits;
 import java.util.Date;
 
 /**
@@ -15,12 +15,12 @@ import java.util.Date;
 public class ProductResponse {
    private long id;
    private String name;
-   private Units units;
+   private EUnits units;
    private int restockLevel;
    private float sellingPrice;
    private Date createdAt;
 
-  public ProductResponse(long id, String name, Units units, int restockLevel, float sellingPrice, Date createdAt) {
+  public ProductResponse(long id, String name, EUnits units, int restockLevel, float sellingPrice, Date createdAt) {
     this.id = id;
     this.name = name;
     this.units = units;
@@ -45,11 +45,11 @@ public class ProductResponse {
     this.name = name;
   }
 
-  public Units getUnits() {
+  public EUnits getUnits() {
     return units;
   }
 
-  public void setUnits(Units units) {
+  public void setUnits(EUnits units) {
     this.units = units;
   }
 
