@@ -6,7 +6,8 @@
 package com.kamilifu.ms_hardware_products.dblayer.repositories;
 
 import com.kamilifu.ms_hardware_products.dblayer.entities.Products;
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Repository;
  * @author kmakamu
  */
 @Repository
-public interface ProductRepository extends CrudRepository<Products,Long>{
-  
+public interface ProductRepository extends JpaRepository<Products,Long>{
+  List<Products> findByIsActive(boolean isActive);
+  List<Products> findByNameContaining(String name);
 }

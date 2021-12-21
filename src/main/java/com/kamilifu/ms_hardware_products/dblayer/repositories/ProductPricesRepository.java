@@ -6,7 +6,7 @@
 package com.kamilifu.ms_hardware_products.dblayer.repositories;
 
 import com.kamilifu.ms_hardware_products.dblayer.entities.ProductPrices;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  * @author kmakamu
  */
 @Repository
-public interface ProductPricesRepository extends CrudRepository<ProductPrices, Long>{
+public interface ProductPricesRepository extends JpaRepository<ProductPrices, Long>{
   
 }
