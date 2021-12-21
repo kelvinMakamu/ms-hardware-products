@@ -15,13 +15,11 @@ import lombok.*;
  */
 @Entity
 @Table(name="products")
-@Getter
-@Setter
-@ToString
+@Data
 public class Products {
   @Id
   @Setter(AccessLevel.PROTECTED)
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
   @Column(length=75,nullable=false,unique=true)
@@ -39,11 +37,11 @@ public class Products {
   @Column(nullable=false)
   private boolean isActive;
   
-  @Column(nullable=false,columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+  @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
   @Temporal(TemporalType.TIMESTAMP)
   private Date createdAt;
   
-  @Column(nullable=false,columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+  @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
   @Temporal(TemporalType.TIMESTAMP)
   private Date updatedAt;
 }
